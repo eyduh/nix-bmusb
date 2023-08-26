@@ -1,5 +1,5 @@
 # nix-bmusb
-A flake to build <Sesse's bmusb>(https://git.sesse.net/?p=bmusb;a=summary) for various target systems.
+A flake to build [Sesse's bmusb](https://git.sesse.net/?p=bmusb;a=summary) for various target systems.
 
 ---
 
