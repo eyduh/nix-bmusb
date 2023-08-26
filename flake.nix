@@ -37,7 +37,7 @@
             "PREFIX=$(out)"
             "UDEVDIR=$(out)/lib/udev"
           ];
-          installPhase
+#          installPhase = "";
         }
       );
       in rec {
