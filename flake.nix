@@ -29,13 +29,15 @@
             sha256 = "sha256-bK/VaszIzayjft6wIjuhdw78NsBO+N27hSED/4OJT78=";
           };
           buildInputs = baseDependencies;
-          #buildPhase = "make -j $NIX_BUILD_CORES";
-          installPhase = ''
-            runHook preInstall
-            mkdir -p $out/usr/local/lib/pkgconfig \
-            mkdir -p $out/usr/local/include/bmusb \
-            mkdir -p $out/lib/udev/rules.d
-          '';
+          nativeBuildInputs = [
+            autoPatchelfHook
+          ];
+          buildPhase = "make all -j $NIX_BUILD_CORES";
+          installFlags = [ 
+            "PREFIX=$(out)"
+            "UDEVDIR=$(out)/lib/udev"
+          ];
+          installPhase
         }
       );
       in rec {
