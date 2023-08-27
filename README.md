@@ -27,7 +27,7 @@ The BlackMagic cards follow a protocol whose exact format is still
 unknown, and the driver is still in beta stage. (The API/ABI is nearing
 stability, but is still not really locked.)
 
-It seems to want about 10â€“15% of one CPU core; a significant chunk of this is
+It seems to want about 10-15% of one CPU core; a significant chunk of this is
 copying data from the kernel over to userspace, which can be skipped by means
 of zerocopy USB if you have a very recent libusb (>= 1.0.21) and a recent
 kernel (>= 4.6.0). There's a decode step which also takes some time and memory
